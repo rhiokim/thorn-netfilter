@@ -26,7 +26,9 @@
   "homepage": "https://github.com/rhiokim/bare-api-server#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "express-routemap": "^1.0.2"
+    "express-routemap": "^1.0.2",
+    "iproute": "^0.7.2",
+    "netfilter": "^0.3.3"
   },
   "devDependencies": {
     "commitizen": "^2.8.6",
