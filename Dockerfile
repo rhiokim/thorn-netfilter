@@ -1,14 +1,17 @@
 FROM mhart/alpine-node:7
 
-MAINTAINER Rhio Kim <rhio.kim@gmail.com>
+MAINTAINER Rhio Kim "rhio.kim@gmail.com"
 
-# RUN apk add --no-cache git openssh
+RUN sed -i -e 's/dl-cdn/dl-4/' /etc/apk/repositories
+
+RUN apk add --no-cache iptables
 
 # Copy package first to cache npm-install and speed up build
 RUN mkdir -p server
 WORKDIR server
 
-COPY lib lib
+# COPY lib lib
+COPY routes routes
 COPY index.js index.js
 COPY package.json package.json
 
