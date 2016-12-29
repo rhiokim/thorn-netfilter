@@ -2,9 +2,7 @@ FROM mhart/alpine-node:7
 
 MAINTAINER Rhio Kim "rhio.kim@gmail.com"
 
-RUN sed -i -e 's/dl-cdn/dl-4/' /etc/apk/repositories
-
-RUN apk add --no-cache iptables
+RUN apk --update add --no-cache iptables ip6tables iproute2 ipset sudo
 
 # Copy package first to cache npm-install and speed up build
 RUN mkdir -p server
